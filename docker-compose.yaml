@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - "./server/nginx.conf:/etc/nginx/conf.d/nginx.conf"
+  client:
+    image: test-client
+    volumes:
+      - "./client/input.yaml:/input.yaml"
+  envoy:
+    image: bitnami/envoy
+    volumes:
+      - "./server/envoy.yaml:/opt/bitnami/envoy/conf/envoy.yaml"
+
+# vim: sw=2 ts=2 expandtab

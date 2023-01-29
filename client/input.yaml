@@ -1,0 +1,29 @@
+- target:
+    url: http://nginx:8080/
+    method: POST
+    body: '{"id":"0"}'
+    header:
+      Content-Type:
+        - application/json
+  query_parameters:
+    threads: 4
+    max_threads: 4
+    connections: 100
+    duration: 10s
+    request_rate: 15000
+
+- target:
+    url: http://envoy:8080/
+    method: POST
+    body: '{"id":"0"}'
+    header:
+      Content-Type:
+        - application/json
+  query_parameters:
+    threads: 4
+    max_threads: 4
+    connections: 100
+    duration: 10s
+    request_rate: 15000
+
+# vim: sw=2 ts=2 expandtab
