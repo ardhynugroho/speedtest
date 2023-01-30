@@ -2,27 +2,21 @@
 
 Testing request/response speed of nginx and envoy using `rtapi` and `wrk`.
 
-## Build `test-client` Docker image
+## Deploy
 
-1. Change to `client` directory
-2. Execute the `build.sh` script
+From repo top directory
 
-## Deploy the lab
+```
+docker compose up -d --build
+```
 
-Run `docker compose up -d`
-
-## Doing the test
-
-Console the client container
+## Do the test
 
 ```
 docker exec -it speedtest-client-1 sh
+cd client
+sh rtapi.sh
+sh wrk.sh
 ```
-
-Change directory to `/client`.
-
-Use the `rtapi.sh` to test using `rtapi` tester.
-
-Use the `wrk.sh` script to test using `wrk`.
 
 // vim: sw=2 ts=2 expandtab
