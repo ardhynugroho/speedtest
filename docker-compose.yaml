@@ -5,6 +5,7 @@ services:
     volumes:
       - "./server/nginx.conf:/etc/nginx/conf.d/nginx.conf"
   client:
+    build: client
     image: test-client
     volumes:
       - "./client/input.yaml:/input.yaml"
